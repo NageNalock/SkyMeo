@@ -13,6 +13,7 @@
 
     </select>
     <select id="total" resultType="int">
+-- 查询分类数量
         select count(*) from category
     </select>
     <insert id="add"  keyProperty="id"  useGeneratedKeys="true" parameterType="Category" >
