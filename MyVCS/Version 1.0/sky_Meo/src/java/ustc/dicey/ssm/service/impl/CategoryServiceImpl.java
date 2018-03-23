@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ustc.dicey.ssm.mapper.CategoryMapper;
 import ustc.dicey.ssm.pojo.Category;
 import ustc.dicey.ssm.service.CategoryService;
+import ustc.dicey.ssm.util.Page;
 
 import java.util.List;
 
@@ -15,7 +16,13 @@ public class CategoryServiceImpl implements CategoryService{
     CategoryMapper categoryMapper;
 
     @Override
-    public List<Category> list() {
-        return categoryMapper.list();
+    public List<Category> list(Page page) {
+        // System.out.println("CategoryServiceImpl");
+        return categoryMapper.list(page);
+    }
+
+    @Override
+    public int total() {
+        return categoryMapper.total();
     }
 }
