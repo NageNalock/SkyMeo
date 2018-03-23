@@ -14,6 +14,7 @@ public class Page {
 
     public Page()
     {
+        // TestClass.test();
         this.count = DEFAULTCOUNT;
     }
 
@@ -22,6 +23,7 @@ public class Page {
         this();
         this.start = start;
         this.count = count;
+        // System.out.println("有参构造:" + start + "," + count);
     }
 
     // 根据count与total算出一共有多少页,getTotalPage
@@ -53,7 +55,7 @@ public class Page {
             lastIndex = total - last;
         }
 
-        lastIndex = lastIndex<0?0:last;
+        lastIndex = lastIndex<0 ? 0:last;
 
         return lastIndex;
     }
