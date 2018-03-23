@@ -78,4 +78,19 @@ public class CategoryController {
 
 
     }
+
+    // 删除方法,参数接受id注入,session用于后续定位文件位置
+    @RequestMapping("admin_category_delete")
+    public String delete(int id, HttpSession session)throws IOException
+    {
+        categoryService.delete(id);
+
+        // 通过session获取ControllerContext然后获取分类图片位置，接着删除分类图片
+        File imgaeFolder = new File(session.getServletContext().getRealPath("img/category"));
+
+        File file = new File(imgaeFolder, id + ".jpg");
+        file.delete();
+
+        return "redirect:/admin_category_list";
+    }
 }

@@ -12,4 +12,6 @@ public interface CategoryMapper {
     public int total();  // 获取项目总数方法
 
     void add(Category category);
+
+    void delete(int id);
 }

@@ -25,4 +25,9 @@ public class CategoryServiceImpl implements CategoryService{
     public int total() {
         return categoryMapper.total();
     }
+
+    @Override
+    public void add(Category category) {
+        categoryMapper.add(category);
+    }
 }

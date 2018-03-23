@@ -14,7 +14,8 @@
 	
 <script>
 function checkEmpty(id, name){
-	var value = $("#"+id).val();
+    // 检查提交项是否为空
+    var value = $("#"+id).val();
 	if(value.length==0){
 		alert(name+ "不能为空");
 		$("#"+id)[0].focus();
@@ -55,6 +56,7 @@ function checkInt(id, name){
 
 
 $(function(){
+    // 对所有的删除连接都进行了监听：
 	$("a").click(function(){
 		var deleteLink = $(this).attr("deleteLink");
 		console.log(deleteLink);

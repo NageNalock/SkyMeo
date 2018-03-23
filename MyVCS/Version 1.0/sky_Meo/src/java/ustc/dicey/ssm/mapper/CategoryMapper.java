@@ -9,5 +9,7 @@ public interface CategoryMapper {
 
     public List<Category> list(Page page);
 
-    public int total();  // 获取总数方法
+    public int total();  // 获取项目总数方法
+
+    void add(Category category);
 }

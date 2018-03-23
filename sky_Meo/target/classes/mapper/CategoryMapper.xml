@@ -16,11 +16,13 @@
 -- 查询分类数量
         select count(*) from category
     </select>
+
     <insert id="add"  keyProperty="id"  useGeneratedKeys="true" parameterType="Category" >
 --  keyProperty="id" useGeneratedKeys="true" 以确保Category对象通过mybatis增加到数据库之后得到的id增长值会被设置在Category对象上。
 --  因为在保存分类图片的时候需要用到这个id值，所以这一步是必须的。
         insert into category ( name ) values (#{name})
     </insert>
+
     <delete id="delete">
         delete from category where id= #{id}
     </delete>
