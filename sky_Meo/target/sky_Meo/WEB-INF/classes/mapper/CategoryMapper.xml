@@ -4,18 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--<mapper namespace="com.how2java.tmall.mapper.CategoryMapper">-->
+
 <mapper namespace="ustc.dicey.ssm.mapper.CategoryMapper">
     <select id="list" resultType="Category">
         select * from   category         order by id desc
-        <if test="start!=null and count!=null">
-            limit #{start},#{count}
-        </if>
+        <!--使用了分类插件,不再需要手动写了-->
+        <!--<if test="start!=null and count!=null">-->
+            <!--limit #{start},#{count}-->
+        <!--</if>-->
 
     </select>
-    <select id="total" resultType="int">
--- 查询分类数量
-        select count(*) from category
-    </select>
+
+    <!--使用了分类插件,不再需要手动写了-->
+    <!--<select id="total" resultType="int">-->
+<!--&#45;&#45; 查询分类数量-->
+        <!--select count(*) from category-->
+    <!--</select>-->
 
     <insert id="add"  keyProperty="id"  useGeneratedKeys="true" parameterType="Category" >
 --  keyProperty="id" useGeneratedKeys="true" 以确保Category对象通过mybatis增加到数据库之后得到的id增长值会被设置在Category对象上。

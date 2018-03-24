@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sky_Meo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="sky_Meo.war">
+      <element id="artifact" artifact-name="sky_Meo:war exploded" />
+    </root>
+  </artifact>
+</component>
