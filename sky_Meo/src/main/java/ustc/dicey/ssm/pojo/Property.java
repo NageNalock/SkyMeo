@@ -30,4 +30,15 @@ public class Property {
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
+
+    // 非逆向字段
+    private Category  category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
