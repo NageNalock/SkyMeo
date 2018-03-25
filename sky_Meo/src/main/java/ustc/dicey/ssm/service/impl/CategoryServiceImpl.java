@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ustc.dicey.ssm.mapper.CategoryMapper;
 import ustc.dicey.ssm.pojo.Category;
+import ustc.dicey.ssm.pojo.CategoryExample;
 import ustc.dicey.ssm.service.CategoryService;
 import ustc.dicey.ssm.util.Page;
 
@@ -29,26 +30,29 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public List<Category> list() {
-        return categoryMapper.list();
+        // 传递一个example对象，这个对象指定按照id倒排序来查询
+        CategoryExample example = new CategoryExample();
+        example.setOrderByClause("id desc");
+        return categoryMapper.selectByExample(example);
     }
 
     @Override
     public void add(Category category) {
-        categoryMapper.add(category);
+        categoryMapper.insert(category);
     }
 
     @Override
     public void delete(int id) {
-        categoryMapper.delete(id);
+        categoryMapper.deleteByPrimaryKey(id);
     }
 
     @Override
     public Category get(int id) {
-        return categoryMapper.get(id);
+        return categoryMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public void update(Category category) {
-        categoryMapper.update(category);
+        categoryMapper.updateByPrimaryKeySelective(category);
     }
 }
