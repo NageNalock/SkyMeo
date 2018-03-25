@@ -50,4 +50,16 @@ public class OrderItem {
     public void setNumber(Integer number) {
         this.number = number;
     }
+
+    // 非生成字段
+    // 在订单管理页面需要看到订单下面的订单项里的产品图片
+    private Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }
