@@ -1,10 +1,13 @@
 package ustc.dicey.ssm.util;
 
+
+
 public class TestClass
 {
     public static void main(String[] args)
     {
         test();
+
     }
 
     public static void test()

@@ -5,7 +5,6 @@ import ustc.dicey.ssm.pojo.Category;
 import ustc.dicey.ssm.pojo.CategoryExample;
 
 public interface CategoryMapper {
-    // 自动生成的
     int deleteByPrimaryKey(Integer id);
 
     int insert(Category record);
